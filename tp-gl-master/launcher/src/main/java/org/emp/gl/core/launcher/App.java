@@ -1,5 +1,5 @@
 package org.emp.gl.core.launcher;
-
+import org.emp.gl.clients.HorlogeGraphique;
 import org.emp.gl.clients.Horloge ;
 import org.emp.gl.time.service.impl.DummyTimeServiceImpl;
 import org.emp.gl.timer.service.TimerService;
@@ -11,7 +11,7 @@ import org.emp.gl.clients.CompteARebours;
 public class App {
 
     public static void main(String[] args) {
-        TimerService service = new DummyTimeServiceImpl();
+        /*TimerService service = new DummyTimeServiceImpl();
 
         new Horloge("Horloge 1", service);
         new Horloge("Horloge 2", service);
@@ -20,7 +20,11 @@ public class App {
         for (int i = 0; i < 10; i++) {
             int val = 10 + (int)(Math.random() * 10);
             new CompteARebours("C" + (i + 2), service, val);
-        }
+        }*/
+        TimerService service = new DummyTimeServiceImpl();
+
+        // Lance une horloge graphique
+        new HorlogeGraphique(service);
 
     }
 
